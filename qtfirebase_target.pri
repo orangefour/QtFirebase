@@ -54,7 +54,7 @@ android: {
     # https://github.com/firebase/quickstart-cpp/blob/e8c20f678a06a28ebb73132abcd79d93b27622d9/messaging/testapp/src/android/java/com/google/firebase/example/TestappNativeActivity.java
 
     message("QtFirebase Android base")
-    QT += androidextras gui-private
+    QT += gui-private
 
     # Specify the STL variant that is to be used in the app .pro file with the $$QTFIREBASE_STL_VARIANT variable
     # c++:      LLVM libc++ runtime
@@ -248,7 +248,7 @@ contains(DEFINES,QTFIREBASE_BUILD_ANALYTICS) {
             -F$$QTFIREBASE_FRAMEWORKS_ROOT/FirebaseAnalytics/FirebaseInstallations.xcframework/ios-arm64_armv7 \
             -F$$QTFIREBASE_FRAMEWORKS_ROOT/FirebaseAnalytics/GoogleAppMeasurement.xcframework/ios-arm64_armv7 \
             -framework FirebaseAnalytics \
-            -framework FirebaseCore \                        
+            -framework FirebaseCore \
             -framework GoogleAppMeasurement \
             -framework GoogleUtilities \
             -framework nanopb \
@@ -269,7 +269,7 @@ contains(DEFINES,QTFIREBASE_BUILD_AUTH) {
     message( "QtFirebase including Auth" )
 
     ios: {
-        LIBS += \            
+        LIBS += \
             -F$$QTFIREBASE_FRAMEWORKS_ROOT/FirebaseAuth/FirebaseAuth.xcframework/ios-arm64_armv7 \
             -F$$QTFIREBASE_FRAMEWORKS_ROOT/FirebaseAuth/GTMSessionFetcher.xcframework/ios-arm64_armv7 \
             -framework FirebaseAuth \
@@ -292,7 +292,7 @@ contains(DEFINES,QTFIREBASE_BUILD_DATABASE) {
 
     ios: {
         LIBS += \
-            -licucore \            
+            -licucore \
             -F$$QTFIREBASE_FRAMEWORKS_ROOT/FirebaseDatabase/FirebaseDatabase.xcframework/ios-arm64_armv7 \
             -F$$QTFIREBASE_FRAMEWORKS_ROOT/FirebaseDatabase/leveldb-library.xcframework/ios-arm64_armv7 \
             -framework FirebaseDatabase \
